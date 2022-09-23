@@ -74,7 +74,6 @@ class Perro {
 
 let luca = new Perro("Pastor Alemán","Luca","Ignacio González",1);
 
-console.log(luca.nombre);
 
 luca.ladrar();
 luca.aullar();

@@ -59,7 +59,6 @@ var Perro = /** @class */ (function () {
     return Perro;
 }());
 var luca = new Perro("Pastor Alemán", "Luca", "Ignacio González", 1);
-console.log(luca.nombre);
 luca.ladrar();
 luca.aullar();
 luca.obtenerRaza();
