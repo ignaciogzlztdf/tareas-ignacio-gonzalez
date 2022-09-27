@@ -8,11 +8,13 @@ class Rectangulo {
   public calcularArea():number{
     return this.altura * this.base;
   }
-  public compararRectangulos():number{
-    let areaDeRectangulo8x4:number = 32;
-    if (this.calcularArea() === areaDeRectangulo8x4){
+  public compararRectangulos(rectangulo3x6DeReferencia:Rectangulo, rectangulo8x4:Rectangulo):number{
+    let areaDeRectangulo3x6:number = rectangulo3x6DeReferencia.calcularArea();
+    let areaDeRectangulo8x4:number = rectangulo8x4.calcularArea();
+
+    if (areaDeRectangulo3x6 === areaDeRectangulo8x4){
       return 0;
-    } else if (this.calcularArea() > areaDeRectangulo8x4) {
+    } else if (areaDeRectangulo3x6 > areaDeRectangulo8x4) {
       return 1;
     } else {
       return -1;
@@ -37,47 +39,25 @@ class Rectangulo {
 }
 
 let rectangulo3x6DeReferencia:Rectangulo = new Rectangulo(3,6);
+let rectangulo8x4:Rectangulo = new Rectangulo(8,4);
 
-
-console.log("Rectángulo de referencia");
+// Primer rectángulo
+console.log("Rectángulo 3x6 de referencia");
 
 console.log("Área: " + rectangulo3x6DeReferencia.calcularArea());
-
-console.log("Comparación con un rectángulo 8x4");
-console.log(rectangulo3x6DeReferencia.compararRectangulos());
 
 console.log("¿Es un cuadrado? " + rectangulo3x6DeReferencia.determinarSiEsUnCuadrado());
 
 console.log(rectangulo3x6DeReferencia.determinarSiEstaAcostadoOParado());
 
+// Segundo rectángulo
+console.log("Rectángulo 8x4");
 
-/*
-class ComparadorDeRectangulos {
-  private rectangulo1DeReferencia:Rectangulo;
-  private rectangulo2:Rectangulo;
+console.log("Área: " + rectangulo8x4.calcularArea());
 
-  constructor(paramRectangulo1DeReferencia:Rectangulo,paramRectangulo2:Rectangulo){
-    this.rectangulo1DeReferencia = paramRectangulo1DeReferencia;
-    this.rectangulo2 = paramRectangulo2;
-  }
-  public compararRectangulos():number{
-    if (this.rectangulo1DeReferencia.calcularArea() === this.rectangulo2.calcularArea()){
-      return 0;
-    } else if (this.rectangulo1DeReferencia.calcularArea() > this.rectangulo2.calcularArea()) {
-      return 1;
-    } else {
-      return -1;
-    }
-  }
-}
-*/
+console.log("¿Es un cuadrado? " + rectangulo8x4.determinarSiEsUnCuadrado());
 
-// let rectangulo8x4:Rectangulo = new Rectangulo(8,4);
+console.log(rectangulo8x4.determinarSiEstaAcostadoOParado());
 
-// let comparadorDeRectangulos:ComparadorDeRectangulos = new ComparadorDeRectangulos(rectangulo3x6DeReferencia,rectangulo8x4);
-
-// console.log("Segundo rectángulo");
-// console.log("Base: " + rectangulo8x4.obtenerBase() + ", Altura: " + rectangulo8x4.obtenerAltura());
-// console.log("Área: " + rectangulo8x4.calcularArea());
-// console.log("¿Es un cuadrado? " + rectangulo8x4.determinarSiEsUnCuadrado());
-// console.log(rectangulo8x4.determinarSiEstaAcostadoOParado());
+console.log("Comparo un rectángulo 3x6 con un rectángulo 8x4");
+console.log(rectangulo3x6DeReferencia.compararRectangulos(rectangulo3x6DeReferencia,rectangulo8x4));
