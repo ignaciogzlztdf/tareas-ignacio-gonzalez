@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var Punto_1 = require("./Punto");
+var Recta_1 = require("./Recta");
+var puntoA = new Punto_1.Punto(3, 2);
+var puntoB = new Punto_1.Punto(1, 2);
+var rectaAB = new Recta_1.Recta(puntoA, puntoB);
+rectaAB.obtenerPuntoInicial().setearY(1);
+console.log(rectaAB.toString());
+console.log(rectaAB.calcularDistanciaEntrePuntos());
